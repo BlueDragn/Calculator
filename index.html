@@ -15,8 +15,11 @@
         <header class="header"></header>
         <!----Result Section -->
         <section class="result-container">
-
+<form id="result-field">
     <input type="number"  id="result" name="result" class="result-section">
+
+</form>
+
 
         </section>
         <!----Key pad -->
@@ -25,9 +28,9 @@
 
                 <!---Column-1-->
                 <div class="column" id="column-1">
-                    <button value="7" id="7">7</button>
-                    <button value="8" id="8">8</button>
-                    <button value="9" id="9">9</button>
+                    <button value="7" id="7" class="num">7</button>
+                    <button value="8" id="8" class="num">8</button>
+                    <button value="9" id="9" class="num">9</button>
                     <button id="del" value="DEL">DEL</button>
                 </div>
 
@@ -57,7 +60,7 @@
 
                 <!---Column-5-->
                 <div class="column" id="column-5">
-                    <button id="reset" data-op="RESET">RESET</button>
+                    <button id="reset" data-op="RESET"onclick="myFunction()" >RESET</button>
                     <button id="equals" data-op="=">=</button>
 
                 </div>
