@@ -1,9 +1,17 @@
-// var num = document.querySelectorAll("num");
-// num.addEventListener("click", readMore);
+var inputField = document.getElementById("result-field");
+var displayNum = document.getElementById("result");
 
-// console.log(num);
+var num = document.getElementById("7").value;
+console.log(num);
+// num.addEventListener("click", keyLog);
+
+ function keyLog(){
+displayNum.value = num;
+ }
+
+
 
 
 function myFunction() {
-    document.getElementById("result-field").reset();
+    inputField.reset();
   }
