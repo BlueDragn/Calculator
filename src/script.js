@@ -1,27 +1,16 @@
+
+
 var inputField = document.getElementById("result-field");
 var displayNum = document.getElementById("result");
 
-// var num = document.getElementById("7").value;
-// console.log(num);
-// // num.addEventListener("click", keyLog);
+var numericButtons = document.querySelectorAll(".num");
 
-//  function keyLog(){
-// displayNum.value = num;
-//  }
-var keyLog = document.querySelectorAll(".num");
-
-
-// keyLog.addEventListener("click", function(e){
-//     var  m = e.target.value;
-//     displayNum.value = m;
-// });
-
-keyLog.forEach(function (num) {
-    num.addEventListener("click", function (e) {
-      var m = e.target.value;
-      displayNum.value = m;
-    });
+numericButtons.forEach(function (button) {
+  button.addEventListener("click", function (e) {
+    var num = e.target.value;
+    displayNum.value += num;
   });
+});
 
 
 
