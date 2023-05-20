@@ -14,10 +14,10 @@
         <!---Header Section -->
         <header class="header"></header>
         <!----Result Section -->
-        <section class="result-section">
-            <div class="result-text">
-                <p  id="result"> 399,981</p>
-            </div>
+        <section class="result-container">
+
+    <input type="number"  id="result" name="result" class="result-section">
+
         </section>
         <!----Key pad -->
         <section class="keypad-section">
@@ -25,10 +25,10 @@
 
                 <!---Column-1-->
                 <div class="column" id="column-1">
-                    <button data-num="7">7</button>
-                    <button data-num="8">8</button>
-                    <button data-num="9">9</button>
-                    <button id="del" data-op="DEL">DEL</button>
+                    <button value="7" id="7">7</button>
+                    <button value="8" id="8">8</button>
+                    <button value="9" id="9">9</button>
+                    <button id="del" value="DEL">DEL</button>
                 </div>
 
                 <!---Column-2-->
@@ -67,6 +67,6 @@
         </section>
 
     </section>
-    
+    <script src="./src/script.js"></script>
 </body>
 </html>
