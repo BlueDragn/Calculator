@@ -44,6 +44,17 @@ function calculateResult() {
   displayNum.value = result;
 }
 
+// Function to calculate the result
+function calculateResult() {
+  var num2 = Number(displayNum.value);
+  var result = operate(num1, num2);
+  displayNum.value = result;
+}
+// Function to delete the last character
+function deleteLastCharacter() {
+  displayNum.value = displayNum.value.slice(0, -1);
+}
+
 /**
  *Operations functions below
  */
