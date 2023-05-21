@@ -21,7 +21,7 @@ operationButtons.forEach(function (button) {
     keyValue = e.target.value;
     var op = keyValue;
     num1 = Number(displayNum.value); // Store the current display value as num1
-    // displayNum.value = ""; // Clear the display for the next input
+    displayNum.value = ""; // Clear the display for the next input
 
   });
 });
@@ -37,6 +37,12 @@ function myFunction() {
   inputField.reset();
 };
 
+// Function to calculate the result
+function calculateResult() {
+  var num2 = Number(displayNum.value);
+  var result = operate(num1, num2);
+  displayNum.value = result;
+}
 
 /**
  *Operations functions below
