@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
 
     <title> Calculator </title>
 </head>
+
 <body>
 
     <section class="main-content" id="main">
@@ -15,11 +17,11 @@
         <header class="header"></header>
         <!----Result Section -->
         <section class="result-container">
-<form id="result-field">
+            <form id="result-field">
 
-    <input   id="result" name="result" class="result-section">
+                <input  type="text" id="result" name="result" class="result-section" readonly>
 
-</form>
+            </form>
 
 
         </section>
@@ -29,7 +31,7 @@
 
                 <!---Column-1-->
                 <div class="column" id="column-1">
-                    <button value="7" id="7" class="num" >7</button>
+                    <button value="7" id="7" class="num">7</button>
                     <button value="8" id="8" class="num">8</button>
                     <button value="9" id="9" class="num">9</button>
                     <button id="del" value="DEL">DEL</button>
@@ -45,24 +47,24 @@
 
                 <!---Column-3-->
                 <div class="column" id="column-3">
-                    <button value="1"class="num">1</button>
-                    <button value="2"class="num">2</button>
-                    <button value="3"class="num">3</button>
+                    <button value="1" class="num">1</button>
+                    <button value="2" class="num">2</button>
+                    <button value="3" class="num">3</button>
                     <button value="-" class="op">-</button>
                 </div>
 
                 <!---Column-4-->
                 <div class="column" id="column-4">
-                    <button value="."class="num">.</button>
-                    <button value="0"class="num">0</button>
+                    <button value="." class="num">.</button>
+                    <button value="0" class="num">0</button>
                     <button value="/" class="op">/</button>
                     <button value="*" class="op">x</button>
                 </div>
 
                 <!---Column-5-->
                 <div class="column" id="column-5">
-                    <button id="reset" data-op="RESET" onclick="myFunction()" >RESET</button>
-                    <button id="equals" data-op="=">=</button>
+                    <button id="reset" value="RESET" onclick="myFunction()">RESET</button>
+                    <button id="equals" value="=" class="op">=</button>
 
                 </div>
 
@@ -73,4 +75,5 @@
     </section>
     <script src="./src/script.js"></script>
 </body>
+
 </html>

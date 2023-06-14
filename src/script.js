@@ -1,34 +1,75 @@
+
+//Target the form section
 var inputField = document.getElementById("result-field");
-var displayNum = document.getElementById("result");
+
+//Target the input field
+var displayValue = document.getElementById("result");
+
+//Target the numeric buttons
 var numericButtons = document.querySelectorAll(".num");
+
+//Target the operator buttons
 var operationButtons = document.querySelectorAll(".op");
 
 
-var num1 = 0;// Variable to store the first number input
+var num1;
+var num2 = 0;
+var op = null;
 
-//event listener for Numeric button
+//Event listener for Numeric button to display thr numbers
 numericButtons.forEach(function (button) {
   button.addEventListener("click", function (e) {
     var keyValue = e.target.value;
-    populateResultField(keyValue);
+
+    if (op) {
+      // If an operator is already selected, update num2
+      num2 = parseFloat(num2.toString() + keyValue);
+    } else {
+      // If no operator is selected, update num1
+      num1 = parseFloat( num1.toString() + keyValue);
+    }
+      // populateResultField(keyValue);
+      displayValue.value += keyValue;
 
   });
 });
 
-//event listener for Operation button
+
+//Event listener for Operation button
 operationButtons.forEach(function (button) {
   button.addEventListener("click", function (e) {
-    keyValue = e.target.value;
-    var op = keyValue;
-    num1 = Number(displayNum.value); // Store the current display value as num1
-    displayNum.value = ""; // Clear the display for the next input
+    var keyValue = e.target.value;
+
+    if(op === "="){
+      displayValue.value = operate(num1,op,num2);
+      num1 = parseFloat(displayValue.value);
+      num2 = 0; // Reset num2
+      op = null;
+    }else if (op === "DEL") {
+      deleteLastCharacter();
+
+    }else {
+      op = keyValue;
+      displayValue.value += keyValue;
+  }
 
   });
 });
+// Function to reset the calculator
+function resetCalculator() {
+  displayValue.value = "";
+  num1 = 0;
+  num2 = 0;
+  op = null;
+}
+// Function to delete the last character
+function deleteLastCharacter() {
+  displayNum.value = displayNum.value.slice(0, -1);
+}
 
 //function to populate the input field
 function populateResultField(num) {
-  displayNum.value += num;
+displayValue.value += num;
 }
 
 
@@ -37,23 +78,29 @@ function myFunction() {
   inputField.reset();
 };
 
-// Function to calculate the result
-function calculateResult() {
-  var num2 = Number(displayNum.value);
-  var result = operate(num1, num2);
-  displayNum.value = result;
-}
 
-// Function to calculate the result
-function calculateResult() {
-  var num2 = Number(displayNum.value);
-  var result = operate(num1, num2);
-  displayNum.value = result;
-}
-// Function to delete the last character
-function deleteLastCharacter() {
-  displayNum.value = displayNum.value.slice(0, -1);
-}
+
+
+//Function to do arithmetic  operation
+function operate(n1,op,n2) {
+
+let result = 0;
+  if (op === "+") {
+    result = addition(n1, n2);
+
+  } else if (op === "-") {
+      result = subtraction(n1, n2);
+
+  } else if (op === "*") {
+     result = multiplication(n1, n2);
+
+  } else if (op === "/") {
+    result = division(n1, n2);
+  }
+
+  return result;
+  }
+
 
 /**
  *Operations functions below
@@ -78,28 +125,4 @@ function multiplication(n1, n2) {
 //Division
 function division(n1, n2) {
   return n1 / n2;
-}
-
-
-//Function to do arithmetic  operation
-function operate(num1, op, num2) {
-  var result;
-  num2 = Number(displayNum.value); // Get the second number from the display
-  if (op === "+") {
-
-    return result = addition(num1, num2);
-
-  } else if (op === "-") {
-    return result = subtraction(num1, num2);
-
-  } else if (op === "*") {
-    return result = multiplication(num1, num2);
-
-  } else if (op === "/") {
-    return result = division(num1, num2);
-
-  } else {
-    result = 0;
-  }
-  displayNum.value = result; // Display the result
 }
